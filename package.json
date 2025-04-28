@@ -1,0 +1,24 @@
+{
+  "name": "basic-api",
+  "version": "1.0.0",
+  "description": "Simple RESTful API for managing items and users in a videogame context. Built with Node.js and Express.js, with local in-memory data storage, endpoint testing via frontend interface, and proper branching workflow for each feature.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fizquiv/basic-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fizquiv/basic-api/issues"
+  },
+  "homepage": "https://github.com/fizquiv/basic-api#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
