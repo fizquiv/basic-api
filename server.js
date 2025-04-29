@@ -1,7 +1,7 @@
 "use strict";
 
 import express from "express";
-import { fs } from "fs";
+import fs from "fs";
 
 const port = 3000;
 const app = express();
@@ -19,4 +19,8 @@ app.get("/", (req, res) => {
     res.send(html);
     console.log("Page sent!");
   });
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
