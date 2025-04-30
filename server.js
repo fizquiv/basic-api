@@ -3,6 +3,21 @@
 import express from "express";
 import fs from "fs";
 
+import {
+  getAllusers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
+} from "./routes/users";
+import {
+  getAllItems,
+  getItemById,
+  createItem,
+  updateItem,
+  deleteItem,
+} from "./routes/items";
+
 const port = 3000;
 const app = express();
 
