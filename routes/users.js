@@ -1,4 +1,4 @@
-import { readDataBase, writeDataBase } from "../data/fileHandler";
+import { readDataBase, writeDataBase } from "../data/fileHandler.js";
 
 export async function getAllusers() {}
 

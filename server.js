@@ -9,14 +9,14 @@ import {
   createUser,
   updateUser,
   deleteUser,
-} from "./routes/users";
+} from "./routes/users.js";
 import {
   getAllItems,
   getItemById,
   createItem,
   updateItem,
   deleteItem,
-} from "./routes/items";
+} from "./routes/items.js";
 
 const port = 3000;
 const app = express();
