@@ -36,6 +36,12 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/api/items", async (req, res) => {
+  const items = getAllItems();
+  if (!items.length) res.status(404).json({ message: "no items found." });
+  res.json(items);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
