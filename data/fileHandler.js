@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 
 const fileName = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(fileName);
-const dbPath = path.join(__dirname, "../data/db.json");
+const dbPath = path.join(__dirname, "../data/database.json");
 
 export async function readDataBase() {
   return new Promise((resolve, reject) => {
