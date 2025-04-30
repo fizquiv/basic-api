@@ -36,6 +36,17 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/api/items/:id", async (req, res) => {
+  try {
+    const item = await getItemById(req.params.id);
+    if (!item) return res.status(404).json({ message: "item not found" });
+    return res.json(item);
+  } catch (err) {
+    console.log("Error getting item:", err);
+    res.status(500).json({ message: "Server error while fetching items" });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
