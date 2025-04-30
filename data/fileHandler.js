@@ -3,8 +3,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const fileName = fileURLToPath(import.meta.url);
-const dirname = path.dirname(fileName);
-const dbPath = path.join(dirname, "../data/db.json");
+const __dirname = path.dirname(fileName);
+const dbPath = path.join(__dirname, "../data/db.json");
 
 export async function readDataBase() {
   return new Promise((resolve, reject) => {
