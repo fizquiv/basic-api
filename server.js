@@ -37,9 +37,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/items", async (req, res) => {
-  const items = getAllItems();
-  if (!items.length) res.status(404).json({ message: "no items found." });
-  res.json(items);
+  try {
+    const items = await getAllItems();
+    if (!items.length)
+      return res.status(404).json({ message: "No items found." });
+    res.json(items);
+  } catch (err) {
+    console.error("Error getting items:", err);
+    res.status(500).json({ message: "Server error while fetching items." });
+  }
 });
 
 app.listen(port, () => {
