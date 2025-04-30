@@ -6,14 +6,14 @@ import fs from "fs";
 import {
   getAllusers,
   getUserById,
-  createUser,
+  addUser,
   updateUser,
   deleteUser,
 } from "./routes/users.js";
 import {
   getAllItems,
   getItemById,
-  createItem,
+  addItem,
   updateItem,
   deleteItem,
 } from "./routes/items.js";

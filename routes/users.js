@@ -4,7 +4,7 @@ export async function getAllusers() {}
 
 export async function getUserById(id) {}
 
-export async function createUser(newUser) {}
+export async function addUser(newUser) {}
 
 export async function updateUser(id, update) {}
 

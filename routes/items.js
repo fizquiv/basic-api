@@ -4,7 +4,7 @@ export async function getAllItems() {}
 
 export async function getItemById(id) {}
 
-export async function createItem() {}
+export async function addItem() {}
 
 export async function updateItem(id) {}
 
