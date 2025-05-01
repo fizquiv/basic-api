@@ -64,9 +64,15 @@ app.post("/api/items", async (req, res) => {
   if (result.error) return res.status(409).json(result);
   res.status(201).json(result);
 });
+
 app.put("/api/items/:id", async (req, res) => {
   const result = await updateItem(req.params.id, req.body);
   if (result.error) return res.status(404).json(result);
+});
+
+app.delete("/api/items/:id", async (req, res) => {
+  const result = await deleteItem(req.params.id);
+  if (res.error) return res.status(404).json(result);
   res.json(result);
 });
 
