@@ -3,17 +3,90 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game Items API</title>
+  <title>Game API Documentation</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <script defer src="../js/script.js"></script>
 </head>
 
 <body>
-  <header>
-    <h1>Game Items API</h1>
-    <p>Test and explore your API endpoints</p>
-  </header>
+  <main class="container">
+    <h1>Game API Documentation & Tests</h1>
+
+    <section class="doc-section">
+      <h2>API Endpoint Reference</h2>
+      <p>This API allows you to manage game <strong>items</strong> and <strong>users</strong>. Each endpoint is
+        documented below.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Endpoint</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>GET</code></td>
+            <td><code>/api/items</code></td>
+            <td>Returns a list of all items in the catalog.</td>
+          </tr>
+          <tr>
+            <td><code>GET</code></td>
+            <td><code>/api/items/:id</code></td>
+            <td>Fetches a specific item by ID (e.g., sword01).</td>
+          </tr>
+          <tr>
+            <td><code>POST</code></td>
+            <td><code>/api/items</code></td>
+            <td>Creates a new item. Requires id, name, type, and effect.</td>
+          </tr>
+          <tr>
+            <td><code>PUT</code></td>
+            <td><code>/api/items/:id</code></td>
+            <td>Updates an item by ID.</td>
+          </tr>
+          <tr>
+            <td><code>DELETE</code></td>
+            <td><code>/api/items/:id</code></td>
+            <td>Deletes an item by ID.</td>
+          </tr>
+          <tr>
+            <td><code>GET</code></td>
+            <td><code>/api/users</code></td>
+            <td>Returns a list of all users, including item details.</td>
+          </tr>
+          <tr>
+            <td><code>GET</code></td>
+            <td><code>/api/users/:id</code></td>
+            <td>Fetches a user by ID and includes their items.</td>
+          </tr>
+          <tr>
+            <td><code>POST</code></td>
+            <td><code>/api/users</code></td>
+            <td>Registers a new user. Requires id, name, email, and optional item IDs.</td>
+          </tr>
+          <tr>
+            <td><code>PUT</code></td>
+            <td><code>/api/users/:id</code></td>
+            <td>Updates a user’s name, email, or items.</td>
+          </tr>
+          <tr>
+            <td><code>DELETE</code></td>
+            <td><code>/api/users/:id</code></td>
+            <td>Deletes a user by ID.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Console-Based Test Requests</h2>
+      <p>Test requests will be sent automatically when this page loads. Open the browser console (F12) to inspect the
+        responses.</p>
+    </section>
+  </main>
+
+  <script defer src="../js/script.js"></script>
 </body>
 
 </html>

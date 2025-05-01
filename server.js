@@ -1,7 +1,6 @@
 "use strict";
 
 import express from "express";
-import fs from "fs";
 
 import {
   getAllusers,
@@ -25,15 +24,7 @@ app.use(express.json());
 app.use(express.static("./public"));
 
 app.get("/", (req, res) => {
-  fs.readFile("./public/html/index.html", (err, html) => {
-    if (err) {
-      res.status(500).send("Error reading file");
-      return;
-    }
-    console.log("Sending page");
-    res.send(html);
-    console.log("Page sent!");
-  });
+  res.sendFile("index.html", { root: "./public/html" });
 });
 
 app.get("/api/items", async (req, res) => {
@@ -55,56 +46,97 @@ app.get("/api/items/:id", async (req, res) => {
     return res.json(item);
   } catch (err) {
     console.log("Error getting item:", err);
-    res.status(500).json({ message: "Server error while fetching items" });
+    res.status(500).json({ message: "Server error while fetching item" });
   }
 });
 
 app.post("/api/items", async (req, res) => {
-  const result = await addItem(req.body);
-  if (result.error) return res.status(409).json(result);
-  res.status(201).json(result);
+  try {
+    const result = await addItem(req.body);
+    if (result.error) return res.status(409).json(result);
+    res.status(201).json(result);
+  } catch (err) {
+    console.error("Error creating item:", err);
+    res.status(500).json({ message: "Server error while creating item." });
+  }
 });
 
 app.put("/api/items/:id", async (req, res) => {
-  const result = await updateItem(req.params.id, req.body);
-  if (result.error) return res.status(404).json(result);
+  try {
+    const result = await updateItem(req.params.id, req.body);
+    if (result.error) return res.status(404).json(result);
+    res.json(result);
+  } catch (err) {
+    console.error("Error updating item:", err);
+    res.status(500).json({ message: "Server error while updating item." });
+  }
 });
 
 app.delete("/api/items/:id", async (req, res) => {
-  const result = await deleteItem(req.params.id);
-  if (res.error) return res.status(404).json(result);
-  res.json(result);
+  try {
+    const result = await deleteItem(req.params.id);
+    if (result.error) return res.status(404).json(result);
+    res.json(result);
+  } catch (err) {
+    console.error("Error deleting item:", err);
+    res.status(500).json({ message: "Server error while deleting item." });
+  }
 });
 
 app.get("/api/users", async (req, res) => {
-  const users = await getAllusers();
-  if (!users.length)
-    return res.status(404).json({ message: "No users found." });
-  res.json(users);
+  try {
+    const users = await getAllusers();
+    if (!users.length)
+      return res.status(404).json({ message: "No users found." });
+    res.json(users);
+  } catch (err) {
+    console.error("Error getting users:", err);
+    res.status(500).json({ message: "Server error while fetching users." });
+  }
 });
 
 app.get("/api/users/:id", async (req, res) => {
-  const user = await getUserById(req.params.id);
-  if (!user) return res.status(404).json({ message: "User not found." });
-  res.json(user);
+  try {
+    const user = await getUserById(req.params.id);
+    if (!user) return res.status(404).json({ message: "User not found." });
+    res.json(user);
+  } catch (err) {
+    console.error("Error getting user:", err);
+    res.status(500).json({ message: "Server error while fetching user." });
+  }
 });
 
 app.post("/api/users", async (req, res) => {
-  const result = await addUser(req.body);
-  if (result.error) return res.status(404).json(result);
-  res.status(201).json(result);
+  try {
+    const result = await addUser(req.body);
+    if (result.error) return res.status(404).json(result);
+    res.status(201).json(result);
+  } catch (err) {
+    console.error("Error creating user:", err);
+    res.status(500).json({ message: "Server error while creating user." });
+  }
 });
 
 app.put("/api/users/:id", async (req, res) => {
-  const result = await updateUser(req.params.id, req.body);
-  if (result.error) return res.status(404).json(result);
-  res.json(result);
+  try {
+    const result = await updateUser(req.params.id, req.body);
+    if (result.error) return res.status(404).json(result);
+    res.json(result);
+  } catch (err) {
+    console.error("Error updating user:", err);
+    res.status(500).json({ message: "Server error while updating user." });
+  }
 });
 
 app.delete("/api/users/:id", async (req, res) => {
-  const result = await deleteUser(req.params.id);
-  if (result.error) return res.status(404).json(result);
-  res.json(result);
+  try {
+    const result = await deleteUser(req.params.id);
+    if (result.error) return res.status(404).json(result);
+    res.json(result);
+  } catch (err) {
+    console.error("Error deleting user:", err);
+    res.status(500).json({ message: "Server error while deleting user." });
+  }
 });
 
 app.listen(port, () => {

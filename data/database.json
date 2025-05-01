@@ -70,15 +70,6 @@
       "name": "Diana",
       "email": "diana@example.com",
       "items": []
-    },
-    {
-      "id": "user05",
-      "name": "Evelyn",
-      "email": "evelyn@example.com",
-      "items": [
-        "sword01",
-        "elixir01"
-      ]
     }
   ]
 }
