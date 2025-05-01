@@ -1,39 +1,66 @@
 {
-  "items": [{
-    "id": "1",
+  "items": [
+  {
+    "id": "sword01",
     "name": "Steel Sword",
     "type": "weapon",
     "effect": "Increases attack by 10"
   },
   {
-    "id": "2",
+    "id": "bow01",
     "name": "Hunter's Bow",
     "type": "weapon",
     "effect": "Shoots arrows at long range"
   },
   {
-    "id": "3",
+    "id": "shield01",
     "name": "Iron Shield",
     "type": "armor",
     "effect": "Blocks 15% of damage"
   },
   {
-    "id": "4",
+    "id": "armor01",
     "name": "Chainmail Armor",
     "type": "armor",
     "effect": "Reduces damage by 10"
   },
   {
-    "id": "5",
+    "id": "potion01",
     "name": "Health Potion",
     "type": "consumable",
     "effect": "Restores 50 HP"
   },
   {
-    "id": "6",
+    "id": "elixir01",
     "name": "Mana Elixir",
     "type": "consumable",
     "effect": "Restores 30 MP"
-  }],
-  "users": []
+  }
+],
+  "users": [
+  {
+    "id": "user01",
+    "name": "Alice",
+    "email": "alice@example.com",
+    "items": ["sword01", "potion01"]
+  },
+  {
+    "id": "user02",
+    "name": "Bob",
+    "email": "bob@example.com",
+    "items": ["bow01", "elixir01"]
+  },
+  {
+    "id": "user03",
+    "name": "Charlie",
+    "email": "charlie@example.com",
+    "items": ["shield01", "armor01"]
+  },
+  {
+    "id": "user04",
+    "name": "Diana",
+    "email": "diana@example.com",
+    "items": []
+  }
+]
 }
