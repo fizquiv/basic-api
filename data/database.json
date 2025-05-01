@@ -35,5 +35,30 @@
     "type": "consumable",
     "effect": "Restores 30 MP"
   }],
-  "users": []
+  "users": [
+    {
+      "id": "user01",
+      "name": "Alice",
+      "email": "alice@example.com",
+      "items": ["1", "2"]
+    },
+    {
+      "id": "user02",
+      "name": "Bob",
+      "email": "bob@example.com",
+      "items": ["3", "4"]
+    },
+    {
+      "id": "user03",
+      "name": "Charlie",
+      "email": "charlie@example.com",
+      "items": ["1", "3"]
+    },
+    {
+      "id": "user04",
+      "name": "Diana",
+      "email": "diana@example.com",
+      "items": []
+    }
+  ]
 }
