@@ -36,6 +36,12 @@ app.get("/", (req, res) => {
   });
 });
 
+app.put("/api/users/:id", async (req, res) => {
+  const result = await updateUser(req.params.id, req.body);
+  if (result.error) return res.status(404).json(result);
+  res.json(result);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
