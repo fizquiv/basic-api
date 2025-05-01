@@ -101,6 +101,12 @@ app.put("/api/users/:id", async (req, res) => {
   res.json(result);
 });
 
+app.delete("/api/users/:id", async (req, res) => {
+  const result = await deleteUser(req.params.id);
+  if (result.error) return res.status(404).json(result);
+  res.json(result);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
