@@ -5,7 +5,10 @@ export async function getAllItems() {
   return db.items;
 }
 
-export async function getItemById(id) {}
+export async function getItemById(id) {
+  const db = await readDataBase();
+  return db.items.find((item) => id === item.id);
+}
 
 export async function addItem() {}
 
