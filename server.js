@@ -36,6 +36,12 @@ app.get("/", (req, res) => {
   });
 });
 
+app.delete("/api/items/:id", async (req, res) => {
+  const result = await deleteItem(req.params.id);
+  if (res.error) return res.status(404).json(result);
+  res.json(result);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
