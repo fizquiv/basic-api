@@ -76,6 +76,13 @@ app.delete("/api/items/:id", async (req, res) => {
   res.json(result);
 });
 
+app.get("/api/users", async (req, res) => {
+  const users = await getAllusers();
+  if (!users.length)
+    return res.status(404).json({ message: "No users found." });
+  res.json(users);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
