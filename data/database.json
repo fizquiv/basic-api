@@ -1,39 +1,47 @@
 {
-  "items": [{
-    "id": "1",
-    "name": "Steel Sword",
-    "type": "weapon",
-    "effect": "Increases attack by 10"
-  },
-  {
-    "id": "2",
-    "name": "Hunter's Bow",
-    "type": "weapon",
-    "effect": "Shoots arrows at long range"
-  },
-  {
-    "id": "3",
-    "name": "Iron Shield",
-    "type": "armor",
-    "effect": "Blocks 15% of damage"
-  },
-  {
-    "id": "4",
-    "name": "Chainmail Armor",
-    "type": "armor",
-    "effect": "Reduces damage by 10"
-  },
-  {
-    "id": "5",
-    "name": "Health Potion",
-    "type": "consumable",
-    "effect": "Restores 50 HP"
-  },
-  {
-    "id": "6",
-    "name": "Mana Elixir",
-    "type": "consumable",
-    "effect": "Restores 30 MP"
-  }],
+  "items": [
+    {
+      "id": "1",
+      "name": "Steel Sword",
+      "type": "weapon",
+      "effect": "Increases attack by 10"
+    },
+    {
+      "id": "2",
+      "name": "Hunter's Bow",
+      "type": "weapon",
+      "effect": "Shoots arrows at long range"
+    },
+    {
+      "id": "3",
+      "name": "Iron Shield",
+      "type": "armor",
+      "effect": "Blocks 15% of damage"
+    },
+    {
+      "id": "4",
+      "name": "Chainmail Armor",
+      "type": "armor",
+      "effect": "Reduces damage by 10"
+    },
+    {
+      "id": "5",
+      "name": "Health Potion",
+      "type": "consumable",
+      "effect": "Restores 50 HP"
+    },
+    {
+      "id": "6",
+      "name": "Mana Elixir",
+      "type": "consumable",
+      "effect": "Restores 30 MP"
+    },
+    {
+      "id": "14",
+      "name": "espada",
+      "type": "weapon",
+      "effect": "Increases attack by 20"
+    }
+  ],
   "users": []
 }
