@@ -59,6 +59,12 @@ app.get("/api/items/:id", async (req, res) => {
   }
 });
 
+app.post("/api/items", async (req, res) => {
+  const result = await addItem(req.body);
+  if (result.error) return res.status(409).json(result);
+  res.status(201).json(result);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
