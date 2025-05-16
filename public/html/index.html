@@ -71,7 +71,7 @@
             <tr>
               <td><code>PUT</code></td>
               <td><code>/api/users/:id</code></td>
-              <td>Updates a user’s name, email, or items.</td>
+              <td>Updates a user's name, email, or items.</td>
             </tr>
             <tr>
               <td><code>DELETE</code></td>
@@ -83,13 +83,165 @@
       </div>
     </section>
 
-    <section class="doc-section">
-      <h2>Console-Based Test Requests</h2>
-      <p>Test requests will be sent automatically when this page loads. Open the browser console (F12) to inspect the
-        responses.</p>
-    </section>
-  </main>
+    <!-- Items Management Section -->
+    <section class="doc-section" id="items-section">
+      <h2>Items Management</h2>
 
+      <div class="form-container">
+        <div>
+          <h3>Register New Item</h3>
+          <form id="register-item-form">
+            <div class="form-group">
+              <label for="item-id">ID:</label>
+              <input type="text" id="item-id" name="id" required>
+            </div>
+            <div class="form-group">
+              <label for="item-name">Name:</label>
+              <input type="text" id="item-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="item-type">Type:</label>
+              <input type="text" id="item-type" name="type" required>
+            </div>
+            <div class="form-group">
+              <label for="item-effect">Effect:</label>
+              <input type="text" id="item-effect" name="effect" required>
+            </div>
+            <button type="submit">Register Item</button>
+          </form>
+        </div>
+
+        <div>
+          <h3>Get Item</h3>
+          <form id="get-item-form">
+            <div class="form-group">
+              <label for="get-item-id">Item ID (leave empty for all items):</label>
+              <input type="text" id="get-item-id" name="id">
+            </div>
+            <button type="submit">Get Item(s)</button>
+          </form>
+        </div>
+
+        <div>
+          <h3>Update Item</h3>
+          <form id="update-item-form">
+            <div class="form-group">
+              <label for="update-item-id">Item ID:</label>
+              <input type="text" id="update-item-id" name="id" required>
+            </div>
+            <div class="form-group">
+              <label for="update-item-name">Name:</label>
+              <input type="text" id="update-item-name" name="name">
+            </div>
+            <div class="form-group">
+              <label for="update-item-type">Type:</label>
+              <input type="text" id="update-item-type" name="type">
+            </div>
+            <div class="form-group">
+              <label for="update-item-effect">Effect:</label>
+              <input type="text" id="update-item-effect" name="effect">
+            </div>
+            <button type="submit">Update Item</button>
+          </form>
+        </div>
+
+        <div>
+          <h3>Delete Item</h3>
+          <form id="delete-item-form">
+            <div class="form-group">
+              <label for="delete-item-id">Item ID:</label>
+              <input type="text" id="delete-item-id" name="id" required>
+            </div>
+            <button type="submit">Delete Item</button>
+          </form>
+        </div>
+
+        <div id="items-result" class="result-container">
+          <!-- Results will be displayed here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Users Management Section -->
+    <section class="doc-section" id="users-section">
+      <h2>Users Management</h2>
+
+      <div class="form-container">
+        <div>
+          <h3>Register New User</h3>
+          <form id="register-user-form">
+            <div class="form-group">
+              <label for="user-id">ID:</label>
+              <input type="text" id="user-id" name="id" required>
+            </div>
+            <div class="form-group">
+              <label for="user-name">Name:</label>
+              <input type="text" id="user-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="user-email">Email:</label>
+              <input type="email" id="user-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="user-items">Items (comma-separated IDs):</label>
+              <input type="text" id="user-items" name="items" placeholder="e.g., sword01,potion01">
+            </div>
+            <button type="submit">Register User</button>
+          </form>
+        </div>
+
+        <div>
+          <h3>Get User</h3>
+          <form id="get-user-form">
+            <div class="form-group">
+              <label for="get-user-id">User ID (leave empty for all users):</label>
+              <input type="text" id="get-user-id" name="id">
+            </div>
+            <button type="submit">Get User(s)</button>
+          </form>
+        </div>
+
+        <div>
+          <h3>Update User</h3>
+          <form id="update-user-form">
+            <div class="form-group">
+              <label for="update-user-id">User ID:</label>
+              <input type="text" id="update-user-id" name="id" required>
+            </div>
+            <div class="form-group">
+              <label for="update-user-name">Name:</label>
+              <input type="text" id="update-user-name" name="name">
+            </div>
+            <div class="form-group">
+              <label for="update-user-email">Email:</label>
+              <input type="email" id="update-user-email" name="email">
+            </div>
+            <div class="form-group">
+              <label for="update-user-items">Items (comma-separated IDs):</label>
+              <input type="text" id="update-user-items" name="items" placeholder="e.g., sword01,potion01">
+            </div>
+            <button type="submit">Update User</button>
+          </form>
+        </div>
+
+        <div>
+          <h3>Delete User</h3>
+          <form id="delete-user-form">
+            <div class="form-group">
+              <label for="delete-user-id">User ID:</label>
+              <input type="text" id="delete-user-id" name="id" required>
+            </div>
+            <button type="submit">Delete User</button>
+          </form>
+        </div>
+
+        <div id="users-result" class="result-container">
+          <!-- Results will be displayed here -->
+        </div>
+      </div>
+    </section>
+
+  </main>
   <script defer src="../js/script.js"></script>
 </body>
 

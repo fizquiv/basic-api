@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "id": "sword01",
-      "name": "Steel Sword",
-      "type": "weapon",
-      "effect": "Increases attack by 10"
-    },
-    {
       "id": "bow01",
       "name": "Hunter's Bow",
       "type": "weapon",
@@ -70,6 +64,14 @@
       "name": "Diana",
       "email": "diana@example.com",
       "items": []
+    },
+    {
+      "id": "usertest",
+      "name": "Updated Test User",
+      "email": "updated@api.com",
+      "items": [
+        "elixir01"
+      ]
     }
   ]
 }

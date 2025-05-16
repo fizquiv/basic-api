@@ -23,6 +23,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static("./public"));
 
+//Get all items in catalog
 app.get("/", (req, res) => {
   res.sendFile("index.html", { root: "./public/html" });
 });
@@ -39,6 +40,7 @@ app.get("/api/items", async (req, res) => {
   }
 });
 
+//Get item from catalog by id
 app.get("/api/items/:id", async (req, res) => {
   try {
     const item = await getItemById(req.params.id);
@@ -50,6 +52,7 @@ app.get("/api/items/:id", async (req, res) => {
   }
 });
 
+//Add item to catalog
 app.post("/api/items", async (req, res) => {
   try {
     const result = await addItem(req.body);
@@ -61,6 +64,7 @@ app.post("/api/items", async (req, res) => {
   }
 });
 
+//Update an item from the catalog
 app.put("/api/items/:id", async (req, res) => {
   try {
     const result = await updateItem(req.params.id, req.body);
@@ -72,6 +76,7 @@ app.put("/api/items/:id", async (req, res) => {
   }
 });
 
+//Delete an item from the catalog by its id
 app.delete("/api/items/:id", async (req, res) => {
   try {
     const result = await deleteItem(req.params.id);
@@ -83,6 +88,7 @@ app.delete("/api/items/:id", async (req, res) => {
   }
 });
 
+//Get all users registered users
 app.get("/api/users", async (req, res) => {
   try {
     const users = await getAllusers();
@@ -95,6 +101,7 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
+//Get a user by their id
 app.get("/api/users/:id", async (req, res) => {
   try {
     const user = await getUserById(req.params.id);
@@ -106,6 +113,7 @@ app.get("/api/users/:id", async (req, res) => {
   }
 });
 
+//Register a user
 app.post("/api/users", async (req, res) => {
   try {
     const result = await addUser(req.body);
@@ -117,6 +125,7 @@ app.post("/api/users", async (req, res) => {
   }
 });
 
+//Update a user by their id
 app.put("/api/users/:id", async (req, res) => {
   try {
     const result = await updateUser(req.params.id, req.body);
@@ -128,6 +137,7 @@ app.put("/api/users/:id", async (req, res) => {
   }
 });
 
+//Delete a user by their id
 app.delete("/api/users/:id", async (req, res) => {
   try {
     const result = await deleteUser(req.params.id);
